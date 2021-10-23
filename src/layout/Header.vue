@@ -58,7 +58,12 @@ export default {
             } else {
                 // 清空input
                 inputValue.value = "";
-                alert("输入不可以为空哦~");
+                methods.$message.info({
+                    message: "输入不可为空哦~",
+                    center: true,
+                    iconClass: "none",
+                    duration: 3000,
+                });
             }
         }
         // input框获取焦点让search页面显示
