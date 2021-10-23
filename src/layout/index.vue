@@ -45,7 +45,7 @@
         <!-- 对话框 -->
         <el-dialog v-model="dialogShow" title="登录提示" @close='closeDialog' :modal='false'>
             <p>本网站仅用于学习交流</p>
-            <p>如需登录请<a href="https://music.163.com/">点我(https://music.163.com/)</a>去往网易云官网</p>
+            <p>如需登录请<a target="blank_" href="https://music.163.com/">点我(https://music.163.com/)</a>去往网易云官网</p>
         </el-dialog>
     </div>
 </template>
