@@ -1,0 +1,91 @@
+body, div,ul, ol, dl, dt, dd, li, dl, h1, h2, h3, h4,audio
+{margin:0;padding:0;font-style:normal;font:12px/22px Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,"\5FAE\8F6F\96C5\9ED1",Arial,sans-serif} 
+ 
+ol, ul ,li{list-style: none;} 
+img {border: 0; vertical-align:middle;} 
+.clearfix::after{
+    content:"";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+a{color:#000000;text-decoration:none; }  
+html,body{
+    height: 100%;
+    color: #4a4a4a;
+    overflow: hidden;
+}
+/* 图片中播放器按钮的样式 */
+.playFont {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #f5f7fa;
+    opacity: 0;
+    transition: all 0.1s ease-in-out;
+}
+.innerPlayFont{
+    position: absolute;
+    font-size: 17px;
+    color: #d33a31;
+    transition: all 0.1s ease-in-out;
+    opacity: 0;
+}
+.el-table td,
+.el-table th {
+    padding: 5px 0;
+    cursor: pointer;
+}
+.el-table {
+    --el-table-border:none;
+}
+.el-pager li:hover {
+    color: #d33a31;
+}
+.el-pager .active {
+    color: #d33a31 !important;
+}
+.el-pagination button:hover {
+    color: #d33a31;
+}
+.el-table__row>td {
+    border: none;
+  }
+
+.el-table::before {
+    height: 0px;
+}
+.el-loading-spinner .path{
+    stroke: #c8291c;
+  }
+.loading .el-loading-text {
+    color: #c8291c;
+    font-size: 14px;
+}
+.el-message {
+    top: 53px !important;
+    height: 80px !important;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #ddd;
+    background-color: rgba(0,0,0,.2);
+}
+.el-message p {
+    font-size: 18px;
+    color: white;
+    font-weight: 540;
+}
+
+/* 对话框样式 */
+.el-dialog {
+    width: 31% !important;
+    margin-top: 40px !important;
+}
+.el-dialog__body{
+    padding: 10px 20px;
+}
+.el-dialog__body a{
+    color: #d33a31;
+    text-decoration: underline;
+}

@@ -1,0 +1,12 @@
+/* 修改header中input的样式 */
+.el-row .el-input__inner {
+    background-color: rgba(0,0,0,.1);
+    border: none;
+    color: white;
+}
+.el-row .el-input__inner::placeholder{
+    color: #ddd;
+}
+.el-icon-search {
+    color: #ddd;
+}
