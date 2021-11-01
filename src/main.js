@@ -13,7 +13,7 @@ import './assets/css/global.css'
 import './assets/font/iconfont.css'
 
 let loadingInstance
-axios.defaults.baseURL = 'http://43.129.200.251:3000'
+axios.defaults.baseURL = 'https://netease-cloud-music-api-navy-beta.vercel.app'
 axios.interceptors.request.use((config) => {
     if (loadingInstance) {
         loadingInstance.close()
