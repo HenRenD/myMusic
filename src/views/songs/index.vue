@@ -1,15 +1,12 @@
 <template>
     <div class="newsongs" @scroll='handleScroll' ref="scrollContainer">
-
         <div class="nav">
             <ul>
                 <li @click="getSongInfo(item[0])" :style="{color:String(type)===item[0]?'#d33a31':''}" v-for="(item,index) in Object.entries(tags)" :key="index">{{item[1]}}</li>
             </ul>
         </div>
         <div :style="fillStyle">
-            <div class="content">
-                <SongList :musicInfo='musicInfo'></SongList>
-            </div>
+            <SongList :musicInfo='musicInfo'></SongList>
         </div>
     </div>
 </template>
@@ -36,7 +33,7 @@ export default {
         let containerSize = ref(0);
         let scrollFlag = ref(true);
         let endIndex = computed(() => {
-            let endIndex_ = startIndex.value + containerSize.value;
+            let endIndex_ = startIndex.value + containerSize.value * 2;
             if (!musicInfo_.value[endIndex_]) {
                 endIndex_ = musicInfo_.value.length - 1;
             }
@@ -44,8 +41,8 @@ export default {
         });
         let fillStyle = computed(() => {
             return {
-                marginTop: startIndex.value * 70 + "px",
-                marginBottom:
+                paddingTop: startIndex.value * 70 + "px",
+                paddingBottom:
                     (musicInfo_.value.length - endIndex.value) * 70 + "px",
             };
         });
@@ -96,9 +93,14 @@ export default {
         function handleScroll() {
             if (scrollFlag.value) {
                 scrollFlag.value = false;
-                if (methods.$refs.scrollContainer.scrollTop > 100) {
+                if (
+                    methods.$refs.scrollContainer.scrollTop >
+                    containerSize.value * 70
+                ) {
                     startIndex.value = parseInt(
-                        (methods.$refs.scrollContainer.scrollTop - 100) / 70
+                        (methods.$refs.scrollContainer.scrollTop -
+                            containerSize.value * 70) /
+                            70
                     );
                 } else {
                     startIndex.value = 0;
@@ -106,7 +108,7 @@ export default {
                 let scrollTime = setTimeout(() => {
                     scrollFlag.value = true;
                     window.clearTimeout(scrollTime);
-                }, 60);
+                }, 0);
             }
         }
         return {
@@ -121,7 +123,7 @@ export default {
     },
     mounted() {
         this.containerSize =
-            Math.ceil(this.$refs.scrollContainer.offsetHeight / 70) + 1;
+            Math.ceil(this.$refs.scrollContainer.offsetHeight / 70) + 5;
     },
 };
 </script>
@@ -157,8 +159,5 @@ export default {
 .nav ul li {
     width: 5%;
     cursor: pointer;
-}
-.content {
-    width: 100%;
 }
 </style>

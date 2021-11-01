@@ -110,7 +110,7 @@ export default {
                             lyric.play();
                             // 切换歌曲之后，重新滚动到最开始
                             if (wordScroll) {
-                                wordScroll.scrollToElement(0, 0, 1000);
+                                wordScroll.scrollTo(0, 0, 0);
                             }
                             // 有歌词就让歌词显示
                             wordShow.value = true;

@@ -1,24 +1,15 @@
 # vue3-music
-
+## 基于Vue3、Vue-cli4实现的pc端线上音乐播放器
+```
+npm install
+npm run serve
+```
 ## Project setup
 ```
 npm install
-```
-
-### Compiles and hot-reloads for development
-```
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).

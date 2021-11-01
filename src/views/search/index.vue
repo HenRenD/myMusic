@@ -28,7 +28,7 @@
                         </el-table-column>
                         <el-table-column width="50">
                             <template v-slot='scope'>
-                                <span class="playsong iconfont" @click="playSong(scope.row)">&#xea82;</span>
+                                <span class="playsong iconfont" @click="iconPlaySong($event,scope.row)">&#xea82;</span>
                             </template>
                         </el-table-column>
                         <el-table-column width="200" label="歌手">
@@ -234,6 +234,11 @@ export default {
                 });
             }
         }
+        // 点击图标播放音乐
+        function iconPlaySong(e, row) {
+            e.stopPropagation();
+            playSong(row);
+        }
         // 将音乐信息添加到待播放歌单中
         function addSongToSongList(id) {
             // 获取对应id的歌曲的信息
@@ -382,6 +387,7 @@ export default {
             tosong,
             toplay,
             tomv_,
+            iconPlaySong,
         };
     },
 };

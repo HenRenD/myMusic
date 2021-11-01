@@ -179,7 +179,7 @@ export default {
     height: 0;
     background-color: white;
     box-shadow: 0 0 5px #ddd;
-    z-index: 99;
+    z-index: 100;
     transition: all 0.2s ease-in-out;
     opacity: 0;
 }
@@ -200,7 +200,7 @@ export default {
     position: absolute;
     right: 0;
     top: 7%;
-    width: 25%;
+    width: 28%;
     height: 0;
     padding: 10px 20px;
     background-color: white;

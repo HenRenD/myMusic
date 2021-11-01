@@ -43,7 +43,7 @@ export default {
             return comments_.value;
         });
         let endIndex = computed(() => {
-            let endIndex_ = startIndex.value + containerSize.value;
+            let endIndex_ = startIndex.value + containerSize.value * 2;
             if (!showdata.value[endIndex_]) {
                 endIndex_ = showdata.value.length - 1;
             }
@@ -144,9 +144,14 @@ export default {
         function handleScroll() {
             if (scrollFlag.value) {
                 scrollFlag.value = false;
-                if (methods.$refs.scrollContainer.scrollTop > 320) {
+                if (
+                    methods.$refs.scrollContainer.scrollTop >
+                    containerSize.value * 70
+                ) {
                     startIndex.value = parseInt(
-                        (methods.$refs.scrollContainer.scrollTop - 320) / 70
+                        (methods.$refs.scrollContainer.scrollTop -
+                            containerSize.value * 70) /
+                            70
                     );
                 } else {
                     startIndex.value = 0;
@@ -154,7 +159,7 @@ export default {
                 let scrollTime = setTimeout(() => {
                     scrollFlag.value = true;
                     window.clearTimeout(scrollTime);
-                }, 60);
+                }, 0);
             }
         }
         // 切换到歌单

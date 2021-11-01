@@ -132,10 +132,10 @@ header {
 /* input框样式 */
 .el-row {
     position: absolute;
-    right: 20px;
+    right: 50px;
     top: 50%;
     transform: translateY(-50%);
-    width: 25%;
+    width: 24%;
 }
 </style>
 

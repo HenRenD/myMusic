@@ -15,14 +15,14 @@
                 <span>{{scope.row.name}}<i v-if="scope.row.mvid" class="iconfont tomv" @click="toMv($event,scope.row.mvid)">&#xe6a3;</i></span>
             </template>
         </el-table-column>
-        <el-table-column width="100">
+        <el-table-column width="150">
             <template v-slot='scope'>
                 <span class="addSong" @click="addSong($event,scope.row.id)">+</span>
             </template>
         </el-table-column>
         <el-table-column width="200" prop="authorName" label="歌手" />
         <el-table-column width="200" prop="album" label="专辑" />
-        <el-table-column width="70" prop="time" label="时长" />
+        <el-table-column width="100" prop="time" label="时长" />
     </el-table>
 </template>
 
