@@ -609,7 +609,7 @@ export default {
     overflow: hidden;
     position: absolute;
     top: 50%;
-    left: 80px;
+    left: 100px;
     height: 80%;
     width: 200px;
     flex-direction: column;
